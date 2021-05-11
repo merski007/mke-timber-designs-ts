@@ -16,3 +16,8 @@ Open to the public
 | ------------- | ------------- |
 | JSON Server | github.com/typicode/json-server |
 | Formik | https://formik.org/ |
+
+## Quick start notes
+* Run app > npm start
+* Deploy app > npm run deploy
+* Start server > npm run server
