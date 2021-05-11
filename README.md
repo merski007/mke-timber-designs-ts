@@ -12,10 +12,11 @@
 Open to the public
 
 ## Packages
-| Package | URL |
+| Package | URL | Description |
 | ------------- | ------------- |
-| JSON Server | github.com/typicode/json-server |
-| Formik | https://formik.org/ |
+| JSON Server | github.com/typicode/json-server | Allows local CRUD mocking |
+| Formik | https://formik.org/ | Quickly build forms |
+| Yup | https://formik.org/ | Form validation plugin that works great with Formik |
 
 ## Quick start notes
 * Run app > npm start
