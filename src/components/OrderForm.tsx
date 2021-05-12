@@ -55,6 +55,11 @@ import "./styles.css";
 
 
 const OrderForm = () => {
+    const products = [
+        { name: 'Pikler Triangle', value: 'piklerTriangle' },
+        { name: 'Large Arch', value: 'largeArch' }
+    ]
+
     return (
         <Formik
             initialValues={{ email: '', firstName: '', lastName: '', phone: '', product: '', contactMethod: '', comments: '' }}
@@ -69,7 +74,7 @@ const OrderForm = () => {
                 phone: Yup.string()
                     .required('Required'),
                 product: Yup.mixed()
-                    .notOneOf(['Please select an item'])
+                    .required('Please select a product')
             })}
             onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
@@ -82,9 +87,12 @@ const OrderForm = () => {
                 <form onSubmit={formik.handleSubmit}>
                     <label htmlFor="product">Select Product</label>
                     <Field name="product" as="select">
-                        <option value="Please select an item">Please select an item</option>
-                        <option value="piklerTriangle">Pikler Triangle</option>
-                        <option value="largeArch">Large Arch</option>
+                        <option value=''>Select a product</option>
+                        {products.map((product =>
+                            <option value={product.value}>{product.name}</option>
+                        ))}
+                        {/* <option value="piklerTriangle">Pikler Triangle</option>
+                        <option value="largeArch">Large Arch</option> */}
                     </Field>
                     <ErrorMessage name="product" />
 
@@ -102,11 +110,10 @@ const OrderForm = () => {
 
                     <label htmlFor="phone">Phone Number</label>
                     <Field name="phone" type="text" />
-                    <ErrorMessage name="text" />
+                    <ErrorMessage name="phone" />
 
                     <label htmlFor="comments">Additional Comments</label>
                     <Field name="comments" as="textarea" />
-                    <ErrorMessage name="text" />
 
                     <button type="submit">Submit</button>
                 </form>
