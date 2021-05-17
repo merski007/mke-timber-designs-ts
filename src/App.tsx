@@ -1,8 +1,10 @@
 import OrderForm from './components/OrderForm'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <OrderForm />
+    // <OrderForm />
+    <Navbar />
   );
 }
 
